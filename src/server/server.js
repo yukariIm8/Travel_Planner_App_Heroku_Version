@@ -1,44 +1,49 @@
-let path = require('path');
 const express = require('express');
 const dotenv = require('dotenv');
-const fetch = require('node-fetch');
-let bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const cors = require('cors');
 
+
+// Configuration for environment variables
 dotenv.config();
 
-// Setup empty JS object to act as endpoint for all routes
-let projectData = {};
-let allData = [];
 
 // Start up an instance of app
 const app = express();
 
+
 /* Middleware*/
-//Here we are configuring express to use body-parser as middle-ware.
+// Configure express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 
 // Cors for cross origin allowance
 app.use(cors());
 
+
 // Initialize the main project folder
 app.use(express.static('dist'));
-
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
     res.sendFile('/dist/index.html')
 })
 
+
 // Setup Server
 const port = 3000;
-const server = app.listen(port, listening);
-
-function listening() {
+const listening = () => {
     console.log(`Server is running on local host: ${port}`);
 };
+app.listen(port, listening);
+
+
+// Setup empty JS object to act as endpoint for all routes
+let projectData = {};
+const allData = [];
+
 
 // POST route for geographic data
-app.post('/addGeographic', (req, res) => {
+app.post('/addGeo', (req, res) => {
     projectData = {
         deptDate: req.body.deptDate,
         countdown: req.body.countdown,
@@ -54,28 +59,23 @@ app.post('/addGeographic', (req, res) => {
 
 
 // POST route for weather data
-app.post('/addWeather', postWeatherData);
-
-function postWeatherData(req, res) {
+app.post('/addWeather', (req, res) => {
     projectData.highTemp = req.body.highTemp;
     projectData.lowTemp = req.body.lowTemp;
     projectData.description = req.body.description;
     res.send(projectData);
-};
+});
+
 
 // POST route for image data
-app.post('/addImage', postImageData);
-
-function postImageData(req, res) {
+app.post('/addImage', (req, res) => {
     projectData.image = req.body.image;
     allData.push(projectData);
     res.send(allData);
-};
+});
 
 
 // GET route for all the data
-app.get('/all', getAllData);
-
-function getAllData(req, res) {
+app.get('/all', (req, res) => {
     res.send(allData);
-};
+});
