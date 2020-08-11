@@ -8,7 +8,8 @@ const cors = require('cors');
 dotenv.config();
 
 // Setup empty JS object to act as endpoint for all routes
-let projectData = [];
+let projectData = {};
+let allData = [];
 
 // Start up an instance of app
 const app = express();
@@ -38,7 +39,7 @@ function listening() {
 
 // POST route for geographic data
 app.post('/addGeographic', (req, res) => {
-    let geoData = {
+    projectData = {
         deptDate: req.body.deptDate,
         countdown: req.body.countdown,
         latitude: req.body.latitude,
@@ -46,9 +47,7 @@ app.post('/addGeographic', (req, res) => {
         city: req.body.city,
         country: req.body.country
     };
-    projectData.push(geoData);
     res.send(projectData);
-
 });
 
 
@@ -56,12 +55,9 @@ app.post('/addGeographic', (req, res) => {
 app.post('/addWeather', postWeatherData);
 
 function postWeatherData(req, res) {
-    let weatherData = {
-        highTemp: req.body.highTemp,
-        lowTemp: req.body.lowTemp,
-        description: req.body.description,
-    };
-    projectData.push(weatherData);
+    projectData.highTemp = req.body.highTemp;
+    projectData.lowTemp = req.body.lowTemp;
+    projectData.description = req.body.description;
     res.send(projectData);
 };
 
@@ -69,11 +65,9 @@ function postWeatherData(req, res) {
 app.post('/addImage', postImageData);
 
 function postImageData(req, res) {
-    let imageData = {
-        image: req.body.image
-    };
-    projectData.push(imageData);
-    res.send(projectData);
+    projectData.image = req.body.image;
+    allData.push(projectData);
+    res.send(allData);
 };
 
 
@@ -81,5 +75,5 @@ function postImageData(req, res) {
 app.get('/all', getAllData);
 
 function getAllData(req, res) {
-    res.send(projectData);
+    res.send(allData);
 };

@@ -95,18 +95,21 @@ const updateUI = async () => {
       const htmlSnippet =
       `<div class="box-place-date">
         <h2 class="place">${data[i].city}</h2>
-        <h3 class="date">${data.date}</h3>
+        <h2 class="place">${data[i].country}</h2>
+        <h3 class="date">${data[i].deptDate}</h3>
+        <h3 class="date">${data[i].countdown}</h3>
+        <img src=${data[i].image} alt="city-photo">
       </div>
       <div class="box-temp-icon-desc">
-        <p class="temp">${data.temperature}<span>°F</span></p>
+        <p class="temp">${data[i].highTemp}<span>°F</span></p>
+        <p class="temp">${data[i].lowTemp}<span>°F</span></p>
         <div class="box-icon-desc">
-          <img src=${data.icon} alt="weather-icon">
-          <h4 class="description">${data.description}</h4>
+          <h4 class="description">${data[i].description}</h4>
         </div>
       </div>
       <div class="box-feeling-content">
         <h4 class="feeling">feeling</h4>
-        <p class="content">${data.feelings}</p>
+        <p class="content">${data[i].latitude}</p>
       </div>`;
 
       parent.insertAdjacentHTML('beforeend', htmlSnippet);
@@ -141,9 +144,8 @@ function performAction(e) {
     })
     // Retrieve parameters to GET the weather data.
     .then((res) => {
-      let i = res.length - 1;
-      const lat = res[i].latitude;
-      const lng = res[i].longitude;
+      const lat = res.latitude;
+      const lng = res.longitude;
       return { lat, lng };
     })
     // GET the weather data.
@@ -162,10 +164,10 @@ function performAction(e) {
     .then(() => {
       return getImage(city);
     })
-    //POST some image data to the app
+    // POST image data to the app
     .then((data) => {
       return postAPIdata('http://localhost:3000/addImage', {
-        image: data.hits[0].webformatURL,
+          image: data.hits[0].webformatURL
       });
     })
     .then(()=>updateUI())
