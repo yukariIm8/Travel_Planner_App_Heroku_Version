@@ -1,10 +1,12 @@
 .app-name {
     font-size: 2rem;
+    font-weight: 700;
+    color: #000;
 }
 
 
 /* Mobile Portrait Orientation: Galaxy Fold, iPhone 5/SE*/
-/* Mobile portrait orientation */
+/* Mobile Portrait Orientation */
 /* Mobile Landscape Orientation */
 @media screen and (min-width: 280px) and (max-width: 899px) {
     .app-title-container {
@@ -17,7 +19,8 @@
         position: fixed;
         width: 100%;
         padding: 2px 0 2px 0;
-        background-color: #fff;
+        //background-color: #FE87A7;
+        background-image: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%); 
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     }
 }
@@ -33,7 +36,8 @@
         position: fixed;
         width: 100%;
         padding: 2px 0 2px 0;
-        background-color: #fff;
+        background-color: #fbda61;
+        background-image: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     }
 

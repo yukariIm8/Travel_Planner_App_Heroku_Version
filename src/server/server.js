@@ -42,6 +42,8 @@ app.post('/addGeographic', (req, res) => {
     projectData = {
         deptDate: req.body.deptDate,
         countdown: req.body.countdown,
+        retnDate: req.body.retnDate,
+        tripLength: req.body.tripLength,
         latitude: req.body.latitude,
         longitude: req.body.longitude,
         city: req.body.city,

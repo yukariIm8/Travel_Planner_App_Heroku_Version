@@ -5,13 +5,22 @@ const pAPIKey = '17846308-40feb30b8bc830ff79b193e88';
 
 
 // Calculate how soon the trip is.
-const countdownDate = date => {
-  let deptDate = new Date(date);
+const countdownDate = dept => {
+  let deptDate = new Date(dept);
   let currDate = new Date();
   let diffTime = deptDate.getTime() - currDate.getTime();
   let countdown = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
   return countdown;
 }
+
+// Calculate 
+const countTripLength = (dept, retn) => {
+  let deptDate = new Date(dept);
+  let retnDate = new Date(retn);
+  let diffTime = retnDate.getTime() - deptDate.getTime();
+  let countdown = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  return countdown;
+};
 
 
 // Async GET request to the Geonames API.
@@ -93,24 +102,35 @@ const updateUI = async () => {
 
       const i = data.length - 1;
       const htmlSnippet =
-      `<div class="box-place-date">
-        <h2 class="place">${data[i].city}</h2>
-        <h2 class="place">${data[i].country}</h2>
-        <h3 class="date">${data[i].deptDate}</h3>
-        <h3 class="date">${data[i].countdown}</h3>
-        <img src=${data[i].image} alt="city-photo">
+      `<div class="box-image">
+        <h2 class="countdown-text">${data[i].city} is <span class="countdown-emphasis">${data[i].countdown}</span> days away♡</h2>
+        <img class="city-image" src=${data[i].image} alt="city-image">
       </div>
-      <div class="box-temp-icon-desc">
-        <p class="temp">${data[i].highTemp}<span>°F</span></p>
-        <p class="temp">${data[i].lowTemp}<span>°F</span></p>
-        <div class="box-icon-desc">
-          <h4 class="description">${data[i].description}</h4>
+      <div class="box-info-layout">
+        <div class="box-dest">
+          <p class="sub-text">Trip to</p>
+          <h2 class="main-text">${data[i].city}, ${data[i].country}</h2>
+        </div>
+        <div class="box-info-sub-layout">
+          <div class="box-trip-info">
+            <p class="sub-text">Departing</p>
+            <h2 class="main-text">${data[i].deptDate}</h2>
+            <p class="sub-text">Returning</p>
+            <h2 class="main-text">${data[i].retnDate}</h2>
+            <p class="sub-text">Trip length</p>
+            <h2 class="main-text">${data[i].tripLength} days</h2>
+          </div>
+          <div class="box-weather">
+            <p class="sub-text">Typical Weather for then</p>
+            <h4 class="main-text">${data[i].description}</h4>
+            <div class="box-temp">     
+              <p class="main-text"><span class="sub-text">High: </span>${data[i].highTemp}°</p>
+              <p class="main-text"><span class="sub-text">Low: </span>${data[i].lowTemp}°</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="box-feeling-content">
-        <h4 class="feeling">feeling</h4>
-        <p class="content">${data[i].latitude}</p>
-      </div>`;
+      `;
 
       parent.insertAdjacentHTML('beforeend', htmlSnippet);
 
@@ -120,7 +140,7 @@ const updateUI = async () => {
 };
 
 // Add event listner to the generate button.
-document.getElementById('generate').addEventListener('click', performAction);
+document.getElementById('plan').addEventListener('click', performAction);
 
 function performAction(e) {
     let city = document.getElementById('city').value;
@@ -128,6 +148,8 @@ function performAction(e) {
       alert('City name is required.');
     }
     let deptDate = document.getElementById('dept-date').value;
+    let returnDate = document.getElementById('return-date').value;
+    let tripLength = countTripLength(deptDate, returnDate);
     let countdown = countdownDate(deptDate);
     // GET the geographic data.
     getGeographic(city)
@@ -136,6 +158,8 @@ function performAction(e) {
         return postAPIdata('http://localhost:3000/addGeographic', {
             deptDate: deptDate,
             countdown: countdown,
+            retnDate: returnDate,
+            tripLength: tripLength,
             latitude: data.geonames[0].lat,
             longitude: data.geonames[0].lng,
             city: city,

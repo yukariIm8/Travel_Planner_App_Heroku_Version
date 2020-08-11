@@ -19,34 +19,27 @@
           <div class ="app-name">Travel Planner</div>
         </div>
         <div class="search-container">
-          <div class ="zip holder">
+          <div class ="holder">
               <label for="dept-date">Date of Departure</label>
-              <input id="dept-date" type="date" name="trip-start" value="2020-12-23" min="2020-08-01" max="2021-12-31" placeholder="e.g., 2020-12-23">
+              <input id="dept-date" type="date" name="trip-start" value="2020-11-25" min="2020-08-01" max="2025-12-31" placeholder="e.g., 2020-12-23">
           </div>
-          <div class ="zip holder">
+          <div class ="holder">
               <label for="return-date">Date of Return</label>
-              <input id="return-date" type="date" name="trip-start" value="2021-01-03" min="2020-08-01" max="2021-12-31" placeholder="e.g., 2021-01-03">
+              <input id="return-date" type="date" name="trip-start" value="2020-11-29" min="2020-08-01" max="2025-12-31" placeholder="e.g., 2021-01-03">
           </div>
           <div class="search-sub-container">
             <div class ="feel holder">
               <label for="city">Destination</label>
-              <textarea id="city" placeholder="e.g., Rome" rows="1" cols="40" maxlength="20"></textarea>
+              <textarea id="city" placeholder="e.g., San Francisco" rows="1" cols="30" maxlength="30"></textarea>
             </div>
-            <button id="generate" class="holder" type="submit">Generate</button>
+            <button id="plan" class="holder" type="submit">Plan</button>
           </div>
         </div>
       </header>
 
-      <section class="most-recent-entry">
-        <h1 class="recent-entry-headline">Most Recent Entry</h1>
+      <section class="my-trip">
+        <h1 class="my-trip-headline">My Trip</h1>
         <div id="entry-holder"></div>
-      </section>
-
-      <section class="history">
-        <h1>History</h1>
-        <div class="past-entry">
-          <ul id="history-list"></ul>
-        </div>
       </section>
 
       <a href="" id ="page-top" class="top-button hide">TOP</a>
