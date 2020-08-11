@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
+$font-stack-main: 'Poppins', sans-serif;
+$search-txt-color: #f30;
+
+
 /* Mobile Portrait Orientation: Galaxy Fold, iPhone 5/SE */
 /* Mobile Portrait Orientation */
 /* Mobile Landscape Orientation */
@@ -15,7 +22,7 @@
         vertical-align: baseline;
         padding-left: 10px;
         font-size: 1.2rem;
-        color: #f30;
+        color: $search-txt-color;
     }
 
 
@@ -27,10 +34,9 @@
         border-radius: 2px;
         border: none;
         background:#eef;
-        color: #f30;
+        color: $search-txt-color;
         font-size: 1.5rem;
-        font-family: 'Oswald', sans-serif;
-
+        font-family: $font-stack-main;
     }
 
 
@@ -42,7 +48,8 @@
         background: #000;
         color: #fff;
         font-size: 1.3rem;
-        font-family: 'Oswald', sans-serif;
+        font-family: $font-stack-main;
+        font-weight: 700;
     }
 
 
@@ -63,21 +70,21 @@
 
     /* Style for Placeholder Text */
     ::placeholder { /* Firefox, Chrome, Opera */
-        color: #f30;
-        font-family: 'Oswald', sans-serif;
+        color: $search-txt-color;
+        font-family: $font-stack-main;
         line-height: 3rem;
     }
 
 
     :-ms-input-placeholder { /* Internet Explorer 10-11 */
-        color: #f30;
-        font-family: 'Oswald', sans-serif;
+        color: $search-txt-color;
+        font-family: $font-stack-main;
     }
 
 
     ::-ms-input-placeholder { /* Microsoft Edge */
-        color: #f30;
-        font-family: 'Oswald', sans-serif;
+        color: $search-txt-color;
+        font-family: $font-stack-main;
     }
 
 }
@@ -101,9 +108,9 @@
         border-radius: 2px;
         border: none;
         background:#eef;
-        color: #f30;
+        color: $search-txt-color;
         font-size: 1.5rem;
-        font-family: 'Oswald', sans-serif;
+        font-family: $font-stack-main;
     }
 }
 
@@ -199,8 +206,8 @@
         border-radius: 2px;
         border: none;
         background:#eef;
-        color: #f30;
+        color: $search-txt-color;
         font-size: 1.5rem;
-        font-family: 'Oswald', sans-serif;
+        font-family: $font-stack-main;
     }
 }
