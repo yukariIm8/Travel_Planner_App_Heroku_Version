@@ -103,26 +103,24 @@ const updateUI = async () => {
       const i = data.length - 1;
       const htmlSnippet =
       `<div class="box-image">
-        <h2 class="countdown-text">${data[i].city} is <span class="countdown-emphasis">${data[i].countdown}</span> days away♡</h2>
+        <h2 id="countdown-text" class="main-text">${data[i].city} is <span class="countdown-emphasis">${data[i].countdown}</span> days away♡</h2>
         <img class="city-image" src=${data[i].image} alt="city-image">
       </div>
       <div class="box-info-layout">
-        <div class="box-dest">
-          <p class="sub-text">Trip to</p>
-          <h2 class="main-text">${data[i].city}, ${data[i].country}</h2>
-        </div>
+        <h2 class="sub-text">Trip to</h2>
+        <p class="main-text">${data[i].city}, ${data[i].country}</p>
         <div class="box-info-sub-layout">
           <div class="box-trip-info">
-            <p class="sub-text">Departing</p>
-            <h2 class="main-text">${data[i].deptDate}</h2>
-            <p class="sub-text">Returning</p>
-            <h2 class="main-text">${data[i].retnDate}</h2>
-            <p class="sub-text">Trip length</p>
-            <h2 class="main-text">${data[i].tripLength} days</h2>
+            <h2 class="sub-text">Departing</h2>
+            <p class="main-text">${data[i].deptDate}</p>
+            <h2 class="sub-text">Returning</h2>
+            <p class="main-text">${data[i].retnDate}</p>
+            <h2 class="sub-text">Trip length</h2>
+            <p class="main-text">${data[i].tripLength} days</p>
           </div>
-          <div class="box-weather">
-            <p class="sub-text">Typical Weather for then</p>
-            <h4 class="main-text">${data[i].description}</h4>
+          <div class="box-weather-info">
+            <h2 class="sub-text">Typical Weather for then</h2>
+            <p class="main-text">${data[i].description}</p>
             <div class="box-temp">     
               <p class="main-text"><span class="sub-text">High: </span>${data[i].highTemp}°</p>
               <p class="main-text"><span class="sub-text">Low: </span>${data[i].lowTemp}°</p>

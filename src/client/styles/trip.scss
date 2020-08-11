@@ -11,9 +11,12 @@
         align-items: center;
     }
 
-    .my-trip-headline {
+
+    h1 {
         padding-bottom: 10px;
+        font-size: 2rem;
     }
+
 
     .main-text {
         text-align: left;
@@ -29,53 +32,28 @@
         color: #677;
     }
 
-    .countdown-text {
-        font-size: 1.7rem;
-        font-weight: 500;
-        color: #FE6CBE;
+
+    #countdown-text {
+        text-align: center;
     }
+
 
     .countdown-emphasis {
         font-size: 2rem;
         font-weight: 700;
-    }
-
-    .date {
-        text-align: left;
-        font-size: 1.3rem;
-        font-weight: 400;
-        color: #677;
+        color: #f6c;
     }
 
 
-    .description {
-        font-size: 1.6rem;
-        font-weight: 600;
-        color: #333;
-    }
-
-
-    .feeling {
-        font-size: 1.6rem;
-        font-weight: 400;
-        color: #333;
-    }
-
-
-    .content {
-        font-size: 2rem;
-        font-weight: 300;
+    .city-image {
+        width: 100%;
+        margin-top: 10px;
     }
 }
 
 
 /* Mobile Portrait Orientation */
 @media screen and (min-width: 280px) and (max-width: 547px) {
-    h1 {
-        font-size: 2rem;
-        font-weight: 400;
-    }
-
     .entry {
         width: auto;
         height: auto;
@@ -89,38 +67,25 @@
         list-style-type: none;
     }
 
-    .city-image {
-        width: 95%;
-        margin: 10px;
-    }
 
-    .box-weather {
+    .box-weather-info {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
+
 
     .box-temp {
         display: flex;
         flex-direction: row;
         gap: 30px;
     }
-
-    .box-weather-desc {
-        text-align: left;
-    }
 }
 
 
 /* Mobile Landscape Orientation */
-@media screen and (min-width: 548px) and (max-width: 899px) {
-    h1 {
-        padding-bottom: 5px;
-        font-size: 2rem;
-        font-weight: 400;
-    }
-
-
+/* Tablet and PC */
+@media screen and (min-width: 548px) {
     .entry {
         display: flex;
         flex-direction: row;
@@ -137,15 +102,18 @@
         list-style-type: none;
     }
 
+
     .box-image {
         width: 40%;
         margin: 10px;
     }
 
+
     .box-info-layout {
         width: 60%;
         padding: 20px 0 0 20px;
     }
+
 
     .box-info-sub-layout {
         display: flex;
@@ -153,10 +121,6 @@
         margin-top: 20px;
     }
 
-    .city-image {
-        width: 100%;
-        margin: 10px;
-    }
 
     .box-trip-info {
         width: 100%;
@@ -164,69 +128,8 @@
         flex-direction: column;
     }
 
-    .box-weather {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-}
 
-
-/* Tablet and PC */
-@media screen and (min-width: 900px) {
-    h1 {
-        padding-bottom: 5px;
-        font-size: 2rem;
-        font-weight: 400;
-
-    }
-
-
-    .entry {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        width: auto;
-        height: auto;
-        padding: 10px;
-        text-align: center;
-        word-break: break-all;
-        border-radius: 20px;
-        background-color: #fff;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        list-style-type: none;
-    }
-
-
- 
-    .box-image {
-        width: 40%;
-        margin: 10px;
-    }
-
-    .box-info-layout {
-        width: 60%;
-        padding: 20px 0 0 20px;
-    }
-
-    .box-info-sub-layout {
-        display: flex;
-        flex-direction: row;
-        margin-top: 20px;
-    }
-
-    .city-image {
-        width: 100%;
-        margin: 10px;
-    }
-
-    .box-trip-info {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .box-weather {
+    .box-weather-info {
         width: 100%;
         display: flex;
         flex-direction: column;
