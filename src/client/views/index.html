@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Yukari Im Travel Planner">
+    <meta name="keyword" content="Travel, Planning, Travel Planner">
+    <meta name="author" content="Yukari Im">
+    <title>Travel Planner</title>
+  </head>
+
+  <body>
+    <div id="app-container">
+
+      <header>
+        <div class="app-title-container">
+          <img src="https://img.icons8.com/ios-filled/50/000000/airplane-window-open.png"/>
+          <div class ="app-name">Travel Planner</div>
+        </div>
+        <div class="search-container">
+          <div class ="zip holder">
+              <label for="dept-date">Date of Departure</label>
+              <input id="dept-date" type="date" name="trip-start" value="2020-12-23" min="2020-08-01" max="2021-12-31" placeholder="e.g., 2020-12-23">
+          </div>
+          <div class ="zip holder">
+              <label for="return-date">Date of Return</label>
+              <input id="return-date" type="date" name="trip-start" value="2021-01-03" min="2020-08-01" max="2021-12-31" placeholder="e.g., 2021-01-03">
+          </div>
+          <div class="search-sub-container">
+            <div class ="feel holder">
+              <label for="city">Destination</label>
+              <textarea id="city" placeholder="e.g., Rome" rows="1" cols="40" maxlength="20"></textarea>
+            </div>
+            <button id="generate" class="holder" type="submit">Generate</button>
+          </div>
+        </div>
+      </header>
+
+      <section class="most-recent-entry">
+        <h1 class="recent-entry-headline">Most Recent Entry</h1>
+        <div id="entry-holder"></div>
+      </section>
+
+      <section class="history">
+        <h1>History</h1>
+        <div class="past-entry">
+          <ul id="history-list"></ul>
+        </div>
+      </section>
+
+      <a href="" id ="page-top" class="top-button hide">TOP</a>
+
+      <footer class="footer">
+        <p class="footer-text">&#9400;Yukari Im</p>
+        <a href="https://icons8.com/icon/PovKDwFGG1u3/airplane-window-open" class="link-text" target="_blank">Airplane Window Open</a>icon by <a class="link-text" target="_blank" href="https://icons8.com">Icons8</a>
+      </footer>
+
+    </div>
+    <script type="text/javascript" src="../../../dist/main.js"></script>
+  </body>
+</html>
