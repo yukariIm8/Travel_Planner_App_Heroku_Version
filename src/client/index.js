@@ -7,6 +7,9 @@ import './styles/trip.scss'
 import './styles/top-button.scss'
 import './styles/footer.scss'
 
+// Add event listner to the generate button.
+document.getElementById('plan').addEventListener('click', performAction);
+
 export {
     performAction
 }
