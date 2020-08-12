@@ -1,12 +1,6 @@
 const express = require('express');
-const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-
-
-// Configuration for environment variables
-dotenv.config();
-
 
 // Start up an instance of app
 const app = express();
@@ -79,3 +73,6 @@ app.post('/addImage', (req, res) => {
 app.get('/all', (req, res) => {
     res.send(allData);
 });
+
+
+module.exports = app

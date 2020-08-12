@@ -11,7 +11,6 @@ const showButton = () => {
   }
 };
 
-
 const showPageTop = () => {
   window.addEventListener('scroll', showButton);
 };
@@ -25,7 +24,6 @@ const scrollToTop = () => {
     window.scrollTo(0, c - c / 40);
   }
 };
-
 
 const goTop = () => {
   pageTopButton.onclick = function(e) {

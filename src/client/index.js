@@ -1,4 +1,5 @@
 import { performAction } from './js/app'
+import { showPageTop, goTop } from './js/pageTop'
 
 import './styles/layout.scss'
 import './styles/header.scss'
@@ -10,6 +11,15 @@ import './styles/footer.scss'
 // Add event listner to the generate button.
 document.getElementById('plan').addEventListener('click', performAction);
 
+// Show page top button
+showPageTop();
+
+// Scroll to page top
+goTop();
+
+
 export {
-    performAction
+    performAction,
+    showPageTop,
+    goTop,
 }
