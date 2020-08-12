@@ -41,19 +41,23 @@ Signing up will get you an API key.
 - [Pixabay](https://pixabay.com/accounts/register/?source=main_nav).
 
 
-### Step 3: Running the Development Server
+### Step 3: Declare your API keys
+- Declare your API keys in app.js.
+
+
+### Step 4: Running the Development Server
 - Complile and start the server.
 ```bash
 npm run dev
 ```
 
-### Step 4: Testing (Optional)
+### Step 5: Testing (Optional)
 - Run test scripts to test the JavaScript funciton and the server (app.js, server.js)
 ```bash
 npm run test
 ```
 
-### Step 5: Running the Production Server
+### Step 6: Running the Production Server
 - Open a new terminal window.
 - Compile the code.
 ```bash
@@ -64,5 +68,5 @@ npm run build
 npm start
 ```
 
-### Step 6: Accessing to localhost
+### Step 7: Accessing to localhost
 - Access `localhost:8080`, and try the app!
