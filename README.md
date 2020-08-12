@@ -34,8 +34,8 @@ I have implemented the followings.
 npm install
 ```
 
-### Step 2: Signup for an API key
-Signing up will get you an API key.
+### Step 2: Signup for API keys
+Signing up will get you API keys.
 - [Geonames](https://www.geonames.org/login)
 - [Weatherbit](https://www.weatherbit.io/)
 - [Pixabay](https://pixabay.com/accounts/register/?source=main_nav).
