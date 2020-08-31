@@ -28,7 +28,7 @@ const port = 3000;
 const listening = () => {
     console.log(`Server is running on local host: ${port}`);
 };
-app.listen(process.env.PORT || port, listening);
+app.listen(port, listening);
 
 
 // Setup empty JS object to act as endpoint for all routes
