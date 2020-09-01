@@ -137,7 +137,7 @@ const performAction = (e) => {
   // POST some geographic data to the app
   .then((data) => {
       //return postAPIdata('http://localhost:3000/addGeo', {
-      return postAPIdata('https://yukariim-travel-planner.herokuapp.com:3000/addGeo', {
+      return postAPIdata('https://yukariim-travel-planner.herokuapp.com/addGeo', {
         deptDate: deptDate,
         countdown: countdown,
         retnDate: returnDate,
