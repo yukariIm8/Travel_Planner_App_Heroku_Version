@@ -11,7 +11,7 @@ const pAPIKey = '17846308-40feb30b8bc830ff79b193e88';
 
 // Async GET request to the Geonames API.
 const getGeo = async (city) => {
-  const url = `https://api.geonames.org/searchJSON?q=${city}&maxRows=1&username=${gAPIKey}`;
+  const url = `http://api.geonames.org/searchJSON?q=${city}&maxRows=1&username=${gAPIKey}`;
   const request = await fetch(url);
 
   try {
