@@ -74,7 +74,7 @@ const postAPIdata = async (url='', data={}) => {
 
 // Update UI
 const updateUI = async () => {
-  const res = await fetch('http://localhost:3000/all');
+  const res = await fetch('/all');
 
   try {
     const data = await res.json();
@@ -136,7 +136,6 @@ const performAction = (e) => {
   getGeo(city)
   // POST some geographic data to the app
   .then((data) => {
-      //return postAPIdata('http://localhost:3000/addGeo', {
       return postAPIdata('/addGeo', {
         deptDate: deptDate,
         countdown: countdown,
@@ -160,7 +159,7 @@ const performAction = (e) => {
   })
   // POST some weather data to the app
   .then((data) => {
-      return postAPIdata('http://localhost:3000/addWeather', {
+      return postAPIdata('/addWeather', {
         highTemp: data.data[0].high_temp,
         lowTemp: data.data[0].low_temp,
         description: data.data[0].weather.description
@@ -172,7 +171,7 @@ const performAction = (e) => {
   })
   // POST image data to the app
   .then((data) => {
-    return postAPIdata('http://localhost:3000/addImage', {
+    return postAPIdata('/addImage', {
       image: data.hits[0].webformatURL
     });
   })
