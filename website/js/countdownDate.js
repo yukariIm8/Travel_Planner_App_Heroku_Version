@@ -8,4 +8,4 @@ const countdownDate = dept => {
 };
 
 
-export { countdownDate }
+export { countdownDate };

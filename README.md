@@ -1,5 +1,5 @@
 # Travel Planner
-![Travel Planner](./src/client/media/app-design.JPG?raw=true "Travel Planner")
+![Travel Planner](./client/media/app-design.JPG?raw=true "Travel Planner")
 
 ## Project Overview
 

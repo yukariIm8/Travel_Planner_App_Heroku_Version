@@ -7,6 +7,8 @@
     <meta name="description" content="Yukari Im Travel Planner">
     <meta name="keyword" content="Travel, Planning, Travel Planner">
     <meta name="author" content="Yukari Im">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="icon" href="favicon/favicon.ico">
     <title>Travel Planner</title>
   </head>
 
@@ -20,11 +22,11 @@
         <div class="search-container">
           <div class ="holder">
               <label for="dept-date">Date of Departure</label>
-              <input id="dept-date" type="date" name="trip-start" value="2020-08-14" min="2020-08-01" max="2025-12-31">
+              <input id="dept-date" type="date" name="trip-start" value="2020-09-14" min="2020-08-01" max="2025-12-31">
           </div>
           <div class ="holder">
               <label for="return-date">Date of Return</label>
-              <input id="return-date" type="date" name="trip-start" value="2020-08-23" min="2020-08-01" max="2025-12-31">
+              <input id="return-date" type="date" name="trip-start" value="2020-09-23" min="2020-08-01" max="2025-12-31">
           </div>
           <div class="search-sub-container">
             <div class ="feel holder">
@@ -49,15 +51,6 @@
       </footer>
 
     </div>
-    <script src="../../../dist/main.js"></script>
-    <script>
-      // Check that service workers are supported
-      if ('serviceWorker' in navigator) {
-          // Use the window load event to keep the page load performant
-          window.addEventListener('load', () => {
-              navigator.serviceWorker.register('/service-worker.js');
-          });
-      }
-     </script>
+    <script src="js/app.js" type="module"></script>
   </body>
 </html>

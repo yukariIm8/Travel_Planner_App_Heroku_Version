@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 
-$font-stack-main: 'Poppins', sans-serif;
-$search-txt-color: #f30;
-
-
 /* Mobile Portrait Orientation: Galaxy Fold, iPhone 5/SE */
 /* Mobile Portrait Orientation */
 /* Mobile Landscape Orientation */
@@ -22,7 +18,7 @@ $search-txt-color: #f30;
         vertical-align: baseline;
         padding-left: 10px;
         font-size: 1.2rem;
-        color: $search-txt-color;
+        color: #f30;
     }
 
 
@@ -34,9 +30,9 @@ $search-txt-color: #f30;
         border-radius: 2px;
         border: none;
         background:#eef;
-        color: $search-txt-color;
+        color: #f30;
         font-size: 1.5rem;
-        font-family: $font-stack-main;
+        font-family: 'Poppins', sans-serif;
     }
 
 
@@ -48,7 +44,7 @@ $search-txt-color: #f30;
         background: #000;
         color: #fff;
         font-size: 1.3rem;
-        font-family: $font-stack-main;
+        font-family: 'Poppins', sans-serif;
         font-weight: 700;
     }
 
@@ -70,21 +66,21 @@ $search-txt-color: #f30;
 
     /* Style for Placeholder Text */
     ::placeholder { /* Firefox, Chrome, Opera */
-        color: $search-txt-color;
-        font-family: $font-stack-main;
+        color: #f30;
+        font-family: 'Poppins', sans-serif;
         line-height: 3rem;
     }
 
 
     :-ms-input-placeholder { /* Internet Explorer 10-11 */
-        color: $search-txt-color;
-        font-family: $font-stack-main;
+        color: #f30;
+        font-family: 'Poppins', sans-serif;
     }
 
 
     ::-ms-input-placeholder { /* Microsoft Edge */
-        color: $search-txt-color;
-        font-family: $font-stack-main;
+        color: #f30;
+        font-family: 'Poppins', sans-serif;
     }
 
 }
@@ -108,9 +104,9 @@ $search-txt-color: #f30;
         border-radius: 2px;
         border: none;
         background:#eef;
-        color: $search-txt-color;
+        color: #f30;
         font-size: 1.5rem;
-        font-family: $font-stack-main;
+        font-family: 'Poppins', sans-serif;
     }
 }
 
@@ -206,8 +202,8 @@ $search-txt-color: #f30;
         border-radius: 2px;
         border: none;
         background:#eef;
-        color: $search-txt-color;
+        color: #f30;
         font-size: 1.5rem;
-        font-family: $font-stack-main;
+        font-family: 'Poppins', sans-serif;
     }
 }

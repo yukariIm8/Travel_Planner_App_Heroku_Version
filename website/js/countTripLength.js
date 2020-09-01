@@ -8,4 +8,4 @@ const countTripLength = (dept, retn) => {
 };
 
 
-export { countTripLength }
+export { countTripLength };

@@ -1,6 +1,6 @@
-import { countdownDate } from './countdownDate'
-import { countTripLength } from './countTripLength'
-import { showPageTop, goTop } from './pageTop'
+import { countdownDate } from './countdownDate.js';
+import { countTripLength } from './countTripLength.js';
+import { showPageTop, goTop } from './pageTop.js';
 
 
 // Global Variables
@@ -179,4 +179,11 @@ const performAction = (e) => {
 };
 
 
-export { performAction }
+// Add event listner to the generate button.
+document.getElementById('plan').addEventListener('click', performAction);
+
+// Show page top button
+showPageTop();
+
+// Scroll to page top
+goTop();

@@ -17,18 +17,14 @@ app.use(cors());
 
 
 // Initialize the main project folder
-app.use(express.static('dist'));
-app.get('/', (req, res) => {
-    res.sendFile('/dist/index.html')
-})
-
+app.use(express.static('website'));
 
 // Setup Server
 const port = 3000;
 const listening = () => {
     console.log(`Server is running on local host: ${port}`);
 };
-app.listen(port, listening);
+app.listen(process.env.PORT || port, listening);
 
 
 // Setup empty JS object to act as endpoint for all routes
@@ -73,6 +69,3 @@ app.post('/addImage', (req, res) => {
 app.get('/all', (req, res) => {
     res.send(allData);
 });
-
-
-module.exports = app
