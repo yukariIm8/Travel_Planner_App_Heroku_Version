@@ -136,7 +136,8 @@ const performAction = (e) => {
   getGeo(city)
   // POST some geographic data to the app
   .then((data) => {
-      return postAPIdata('http://localhost:3000/addGeo', {
+      //return postAPIdata('http://localhost:3000/addGeo', {
+      return postAPIdata('/addGeo', {
         deptDate: deptDate,
         countdown: countdown,
         retnDate: returnDate,
